@@ -3,16 +3,31 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  constructor(){
+    super()
+
+    this.state = {
+      data: ["what", "is", "up"]
+    }
+  }
+
   render() {
+
+    const words = this.state.data.map((current, index) => {
+      return(
+        
+          <h2 key={current + index}>{current}</h2>
+        
+      )
+    })
+
+
+
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      hello
+        {words}
       </div>
     );
   }
